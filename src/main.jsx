@@ -1,13 +1,11 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import { AppelleProvider } from './context/AppelleContext.jsx';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
-    <AppelleProvider>
-      <App />
-    </AppelleProvider>
-  </StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
