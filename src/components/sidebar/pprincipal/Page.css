@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-button {
+  position: fixed;
+  top: 10px;  /* Changed from 20px to 10px to move it higher */
+  left: 20px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line-1, .line-2, .line-3 {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;  /* Reduced from 6px to 4px to make it more compact */
+  transition: 0.4s;
+}
+
+.menu-button.open .line-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-button.open .line-2 {
+  opacity: 0;
+}
+
+.menu-button.open .line-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.sidebar-menu {
+  position: fixed;
+  left: -320px;
+  top: 0;
+  height: 100vh;
+  width: 315px;
+  background: linear-gradient(145deg, #ff8c00, #e67e22);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  transition: all 0.1s ease;
+}
+
+.barmenu-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+  padding-top: 30px;
+}
+
+.menu-item {
+  padding: 18px 25px;
+  margin: 10px 0;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  min-width: 35px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(15px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-text {
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+
+.sidebar-menu.open {
+  left: 0;
+  transform: translateX(0);
+}
+
+.barmenu-title {
+  color: white;
+  margin-bottom: 35px;
+  font-size: 26px;
+  padding-top: 25px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.5s ease forwards 0.3s;
+}
+
+.menu-item {
+  color: white;
+  padding: 15px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.4s; }
+.menu-item:nth-child(2) { animation-delay: 0.5s; }
+.menu-item:nth-child(3) { animation-delay: 0.6s; }
+.menu-item:nth-child(4) { animation-delay: 0.7s; }
+.menu-item:nth-child(5) { animation-delay: 0.8s; }
+.menu-item:nth-child(6) { animation-delay: 0.9s; }
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-icon {
+  font-size: 20px;
+  min-width: 25px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-icon {
+  transform: scale(1.2);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  color: white;
+  padding: 12px 15px; /* Reduced from 18px 15px */
+  margin: 5px 0; /* Reduced from 8px */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-size: 16px; /* Reduced from 18px */
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Reduced from 15px */
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.menu-icon {
+  font-size: 18px; /* Reduced from 20px */
+  min-width: 20px; /* Reduced from 25px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 15px; /* Reduced from 20px */
+  margin-left: 50px; /* Reduced from 60px */
+}
+
+.content-card {
+  background-color: white;
+  padding: 20px; /* Reduced from 25px */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-card h2 {
+  font-size: 24px; /* Reduced from 28px */
+  margin-bottom: 12px; /* Reduced from 15px */
+  color: #333;
+}
+
+.content-card p {
+  font-size: 16px;
+  color: #666;
+}
