@@ -18,6 +18,16 @@ const StagiairePage = () => {
     etablissement: ''
   });
 
+  useEffect(() => {
+    fetch('http://localhost:8080/sa')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setStagiaires(data);
+      })
+  }, [])
+
   // Charger les données au montage du composant
   useEffect(() => {
     if (data && Array.isArray(data)) {
@@ -163,11 +173,7 @@ const StagiairePage = () => {
           <div key={stagiaire.id} className="stagiaire-card">
             <div className="stagiaire-info">
               <h3>{stagiaire.nom} {stagiaire.prenom}</h3>
-              <p>Date de naissance : {stagiaire.dateNaissance}</p>
-              <p>Formation : {stagiaire.formation}</p>
-              <p>Direction : {stagiaire.direction}</p>
-              <p>Période : {stagiaire.dateDebut} - {stagiaire.dateFin}</p>
-              <p>Établissement : {stagiaire.etablissement}</p>
+
             </div>
             <div className="stagiaire-actions">
               <button className="btn-edit" onClick={() => handleEdit(stagiaire)}>Modifier</button>
